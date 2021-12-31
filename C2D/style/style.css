@@ -1,0 +1,13 @@
+
+  
+body
+{
+    background-color: #696969;
+    text-align: center;
+}
+
+#canvas
+{
+    border: 1px solid black;
+    border-radius: 20px;
+}
