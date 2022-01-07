@@ -228,7 +228,7 @@ function new_model(){
         age:0,
         time:0,
         lose: false,
-        win:true,
+        win:false,
         w_x:600,
         w_y:400,
         r:10,
