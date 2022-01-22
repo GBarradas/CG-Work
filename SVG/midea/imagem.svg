@@ -48,7 +48,6 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
          style="stroke:lightgrey; stroke-width:3"/>
          <line x1="107" y1="110" x2="113" y2="110" stroke-linecap="round"
          style="stroke:dimgrey; stroke-width:3"/>
-         <!--giador-->
          
          <!--celim-->
          <circle cx="120" cy="63" r="3" fill="red"/>
@@ -109,6 +108,7 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
          style="stroke:white; stroke-width:2.5"/>
       
       </g>
+      <!--giador-->
       <g id="guiador">
          <line x1="71" y1="64" x2="75" y2="55" stroke-linecap="round"
             style="stroke:grey; stroke-width:3"/>
@@ -126,6 +126,7 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             " stroke-linecap="round"
             style="stroke:RED; stroke-width:4" />
       </g>
+      <!--Ceu-->
       <linearGradient id="grad1">
         	<stop offset="0.15" stop-color="yellow"/>
             <stop offset="0.2" stop-color="orange"/>
@@ -143,7 +144,7 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     	fill="white"/>
       </g>
 
-      <!--placa-->
+      <!-- simbolo da placa de Évora-->
       <g id="simbolo" >
       <circle cx="15" cy="15" r="15" fill="white" style="stroke:black; stroke-width:2"/>
       <path d="
@@ -163,7 +164,7 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
       " fill="white"/>
       </g>
-
+      <!--placa de Évora-->
       <g id="placa">
       <line x1="20" y1="128" x2="20" y2="70"
 		stroke-linecap="round"
@@ -173,25 +174,24 @@ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <text font-family="Calibri" font-size="20" x="-3" y="67" fill="black">Évora</text>
       <use xlink:href="#simbolo" transform="translate(-5,35) scale(0.4)"/>
       </g>
-      <!--Objeto acompanhante-->
+      <!--Bandeira de portugal-->
       <g id="bandeira">
       <linearGradient id="grad2">
-        	<stop offset="0.5" stop-color="green"/>
+        	<stop offset="0.454" stop-color="green"/>
             <stop offset="0.2" stop-color="red"/>
       
         </linearGradient>
           <line x1="160" y1="100" x2="160" y2="30"
 		   stroke-linecap="round" style="stroke:brown; stroke-width:3"/>
-         <rect x="160" y="30" width="25" height="30"
-      	fill="green"/>
-          <rect x="185" y="30" width="30" height="30"
-      	fill="red"/>
+         <rect x="160" y="30" width="55" height="30"
+      	fill="url(#grad2)"/>
          <circle cx="185" cy="45" r="8" fill="yellow" />
          
       </g>
       
 
    </defs>
+   
    <use xlink:href="#ceu"/>
    <use xlink:href="#placa" transform="translate(110,50)"/>
    <use xlink:href="#roda" fill="lime" transform="translate(20,100)"/>
