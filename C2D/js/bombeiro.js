@@ -1,7 +1,7 @@
 function circle(gc,cx,cy,r,fillcolor,stroke){
     gc.fillStyle=fillcolor;
     gc.beginPath();
-    gc.strokeStyle=stroke
+    gc.strokeStyle=stroke;
     gc.moveTo(cx-r,cy);
     gc.arcTo(cx-r,cy-r,cx,cy-r,r);
     gc.arcTo(cx+r,cy-r,cx+r,cy,r);

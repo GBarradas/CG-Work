@@ -3,8 +3,8 @@
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg 
      width="700" height="500"
-     viewBox="30 0 140 200"
-	xmlns="http://www.w3.org/2000/svg" 
+     viewBox="30 0 140 190"
+	   xmlns="http://www.w3.org/2000/svg" 
      	xmlns:xlink="http://www.w3.org/1999/xlink">
 
    <defs>
@@ -14,6 +14,7 @@
          <circle cx="50" cy="50" r="20" stroke-width="1" />
 			<circle cx="50" cy="50" r="15"
 			stroke="DeepSkyBlue" stroke-width="1" fill="DeepSkyBlue"/>
+         <!--Raios-->
          <line x1="50" y1="50" x2="35" y2="50"
 			stroke-linecap="round" stroke="black" stroke-width="1"/>
 			<line x1="50" y1="50" x2="65" y2="50"
@@ -49,8 +50,8 @@
          " fill="yellow"/>
          <circle cx="120" cy="103" r="6" fill="goldenrod"/>
          
-      <!--pedal-->
-            <line x1="120" y1="103" x2="110" y2="110" stroke-linecap="round"
+         <!--pedal-->
+         <line x1="120" y1="103" x2="110" y2="110" stroke-linecap="round"
          style="stroke:lightgrey; stroke-width:3"/>
          <line x1="107" y1="110" x2="113" y2="110" stroke-linecap="round"
          style="stroke:dimgrey; stroke-width:3"/>
@@ -126,17 +127,18 @@
             " style="stroke:grey; stroke-width:3"/>
             <line x1="80" y1="49" x2="90" y2="49" stroke-linecap="round"
             style="stroke:blue; stroke-width:4"/>
+            <!--Campainha-->
             <path id="campainha" d=" 
             M 75 45 
-            L 74 45
+            L 73.5 45
             " stroke-linecap="round"
             style="stroke:RED; stroke-width:4" />
       </g>
       <!--Ceu-->
       <linearGradient id="grad1">
-        	<stop offset="0.15" stop-color="yellow"/>
-            <stop offset="0.2" stop-color="orange"/>
-            <stop offset="0.4" stop-color="DeepSkyBlue"/>
+        	<stop offset="0.10" stop-color="yellow"/>
+            <stop offset="0.15" stop-color="orange"/>
+            <stop offset="0.3" stop-color="DeepSkyBlue"/>
       
         </linearGradient>
         
@@ -197,7 +199,7 @@
       
 
    </defs>
-   
+   <!--junção do varios objetos para formar a imagem-->
    <use xlink:href="#ceu"/>
    <use xlink:href="#placa" transform="translate(110,50)"/>
    <use xlink:href="#roda" fill="lime" transform="translate(20,100)"/>
@@ -207,14 +209,14 @@
    
    <use xlink:href="#guiador" fill="lime" transform="translate(9,50)"/>
    <use xlink:href="#chão" transform="translate(0,50)"/>
-   <!--animações-->
+    <!--animações-->
    <animateTransform 
         xlink:href="#placa"
 		attributeName="transform"
 		attributeType="XML"
-		type="rotate"
-		from="-0.1 50 100000"
-		to="0.2 50 100000"
+		type="translate"
+		from="-300 0"
+		to="300 0"
 		dur="5s"
 		begin="0s"
 		repeatCount="indefinite"
@@ -235,9 +237,9 @@
         xlink:href="#chão"
 		attributeName="transform"
 		attributeType="XML"
-		type="rotate"
-		from="0 0 100000"
-		to="0.1 0 100000"
+		type="translate"
+		from="-50 0 "
+		to="250 0 "
 		dur="6s"
 		begin="0s"
 		repeatCount="indefinite"

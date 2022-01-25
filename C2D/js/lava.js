@@ -1,4 +1,4 @@
-function message(text) {
+function message(text) { //mostra mensagens para o jogador
     let terminal = document.getElementById("terminal");
     terminal.innerHTML = text;
 }
@@ -17,10 +17,19 @@ function range(n) {
 function distance(a) {
     return Math.hypot(this.pos_x - a.pos_x, this.pos_y - a.pos_y);
 } 
-function render(model){
-    message(` Running | Time ${Math.ceil(model.time/60)}`)
+function render(model){         //desenha o model
+   
+    message(` Running | Time ${Math.ceil(model.time/60)}`);
+    document.getElementById("play").style.display='none';
     if(model.paused){
-        message(`Paused | Time ${Math.ceil(model.time/60)}`)
+        message(`Paused | Time ${Math.ceil(model.time/60)}`);
+        document.getElementById("play").style.display='none';
+    }
+    if(model.win){
+        message(`You Win | Time ${Math.ceil(model.time/60)}`);
+    }
+    if(model.lose){
+        message(`Game Over | Time ${Math.ceil(model.time/60)}`);
     }
     let bom=model.player;
     this.fillStyle="skyblue";
@@ -36,8 +45,8 @@ function render(model){
         let cy=i.pos_y;
         let r=i.r;
         if(r>0){
-
-
+            
+            
             let g = this.createRadialGradient(cx,cy,r,cx,cy,0 );
             g.addColorStop(0.4, "red");
             g.addColorStop(0, "orange");
@@ -59,8 +68,9 @@ function render(model){
         this.leave_ref();
         if(model.w_x<=0){
             this.fillStyle="black"
-            this.font="100px serif"
+            this.font="100px Chilanka"
             this.fillText("You Win!",100,200)
+            document.getElementById("play").style.display='inline';
         }
     }
     else if(model.lose ){
@@ -68,8 +78,8 @@ function render(model){
         let cy=200;
         let r=model.r;
         if(r>0){
-
-
+            
+            
             let g = this.createRadialGradient(cx,cy,r,cx,cy,0 );
             g.addColorStop(0.4, "red");
             g.addColorStop(0, "orange");
@@ -84,22 +94,23 @@ function render(model){
         }
         if(model.r>=400){
             this.fillStyle="black"
-            this.font="100px serif"
+            this.font="100px Chilanka"
             this.fillText("You Lose",100,200)
+            document.getElementById("play").style.display='inline';
         }
     }
-
+    
 }
-function enter_ref(dx, dy, sx, sy, a) {
+function enter_ref(dx, dy, sx, sy, a) { //inicia um novpo referencial
     this.save();
     this.translate(dx, dy);
     this.rotate(a);
     this.scale(sx, sy);
 }
 
-function leave_ref() { this.restore(); }
+function leave_ref() { this.restore(); }    //anbandona o referencial voltando ao antigo
 
-function new_context(){
+function new_context(){         //cria um novo contexto 2d para desenharmos o nosso modelo
     let gc =document
     .getElementById("canvas")
     .getContext("2d");
@@ -113,10 +124,10 @@ function new_context(){
 
 }
 
-function update_pudle(model){
-    this.verify(model);
-    let x=this.pos_x;
-    let y=this.pos_y;
+function update_pudle(model){       // atualiza as poças 
+    this.verify(model);             // verifica se esta em contacto com o jogador
+    let x=this.pos_x;               // esta função tambem virifica se as poças ser matem no tabuleiro
+    let y=this.pos_y;               // e se estas não estão nas safe areas "areas a verde"
     let xd=x+(this.r);
     let xe=x-(this.r)
     let yd=y+(this.r);
@@ -164,7 +175,7 @@ function update_pudle(model){
     }
 
 }
-function new_pudle() {
+function new_pudle() {      //cria uma nova poça
     let pudle = {
         pos_x:( rand_cr(0.5,0.45)*600),
         pos_y:( rand_cr(0.5,0.45)*400),
@@ -179,7 +190,7 @@ function new_pudle() {
     pudle.verify=verify;
     return pudle;
 }
-function verify(model){
+function verify(model){         //verifica se uma determinada poça esta em contacto com o jogador
     let player=model.player;
 
     if(player.pos_x>this.pos_x && player.pos_y+48<this.pos_y){
@@ -207,7 +218,7 @@ function verify(model){
         }
     }
 }
-function update_model(){
+function update_model(){        //atualiza o modelo, tambem atualiza as cordenadas do jogador
     if(this.win){
         if(this.w_x>0){
 
@@ -254,7 +265,7 @@ function update_model(){
     player.action=0;
     this.pudles.forEach(p => p.update(this));
 }
-function new_model(){
+function new_model(){           //cria um novo modelo
 
     let model={
         age:0,
@@ -285,7 +296,7 @@ function new_model(){
             case "s": case "S": model.player.action = 2;  model.paused=false; break;
             case "d": case "D": model.player.action = 3;  model.paused=false; break;
             case "a": case "A":model.player.action = 4;  model.paused=false; break;
-            case " ": model.paused= !model.paused  ;
+            case " ": model.paused= !model.paused; break; ;
             default: model.player.action = 0; break;
         }
         
@@ -294,13 +305,12 @@ function new_model(){
     return model;
 }
 function main(){
-    let gc= new_context();
-    message("I'm alive");
-    let model=new_model();
-    let step = (ts) => {
-        model.update();
-         gc.render(model);
-         requestAnimationFrame(step);
+    let gc= new_context();      //criar o objeto grafico
+    let model=new_model();      //cria o modelo
+    let step = (ts) => {        //função de animação
+        model.update();         //atualiza o modelo
+         gc.render(model);      //desenha o modelo
+         requestAnimationFrame(step);       //anima o modelo
      }
 
      requestAnimationFrame(step);

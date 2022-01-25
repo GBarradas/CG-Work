@@ -1,0 +1,33 @@
+
+body{
+    text-align: center;
+    font-family: 'Chilanka', cursive;
+}
+canvas
+{
+    border-radius: 20px;
+}
+#word{
+    margin-bottom: 20px;
+    padding: 0.75rem 2rem;
+    font-size: larger;
+    font-family: 'Chilanka', cursive;
+    border-radius:2rem;
+}
+.btn{
+    margin-left: .25rem;
+    margin-right: .25rem;
+    display:inline-block;
+    font-family: 'Chilanka', cursive;
+    text-align:center;
+    vertical-align:middle;
+    background-color:rgb(0, 123, 255);
+    border: 2px solid black;
+    padding: .375rem 2rem;
+    font-size:1.9rem;
+    border-radius: 2rem;
+   
+}
+.btn:hover{
+    background-color:rgb(207, 207, 207);
+}

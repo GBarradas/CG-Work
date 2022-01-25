@@ -4,14 +4,84 @@
 
   <head>
     <meta charset="utf8">
+    <meta name="author" content="Gonçalo Barradas">
     <title>48402-X3D</title>
+    <!--Libs-->
+    <script type='text/javascript' src ='lib/x3dom/x3dom-full.js'></script>
     <script type='application/javascript' src='lib/x3dom/x3dom-full.js'>
     </script>
+    <!--style : css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     <link rel='stylesheet' type='text/css' href='lib/x3dom/x3dom.css' />
+		<link rel="stylesheet" type="text/css" href="style/style.css" />
   </head>
 
   <body>
       <h1>Trabalho de 48402 - X3D</h1>
-  
+      <div class="canvas" >
+
+        <x3d  width='70vw' height='70vh'>
+          <scene>
+            <group>
+              <Transform translation='0 2 0'>
+
+                <Transform>
+                  <Shape>
+                    <Appearance>
+                      <twoSidedMaterial diffuseColor='red'/>
+                    </Appearance>
+                    <Cone bottom='true' bottomRadius='1.0' 
+                    ccw='true' height='2' lit='true' 
+                    metadata='X3DMetadataObject' side='true' 
+                    solid='true' subdivision='132' top='true' 
+                    topRadius='0' useGeoCache='true' ></Cone>
+                  </Shape>
+                </Transform>
+                <Transform translation='0 -3 0'>
+                  <Shape>
+                    <Appearance>
+                      <twoSidedMaterial diffuseColor='#363636'/>
+                    </Appearance>
+                    <Cylinder bottom='true' ccw='true'
+                     height='4.0' lit='true'
+                      metadata='X3DMetadataObject' 
+                      radius='1.0' side='true' solid='true' 
+                      subdivision='32' top='true' useGeoCache='true' ></Cylinder>
+                  </Shape>
+                </Transform>
+                <Transform rotation='1 0 0 1.57'>
+      
+                  <Transform translation='0 0 2'>
+                    <Shape>
+                      <Appearance>
+                        <twoSidedMaterial diffuseColor='steelblue'/>
+                      </Appearance>
+                      <Cylinder bottom='true' ccw='true'
+                      height='2.2' lit='true'
+                      metadata='X3DMetadataObject' 
+                      radius='0.8' side='true' solid='true' 
+                      subdivision='32' top='true' useGeoCache='true' ></Cylinder>
+                    </Shape>
+                  </Transform>
+                </Transform>
+                <Transform translation='0 -4.5 0' >
+                  <Shape>
+                    <Appearance>
+                      <twoSidedMaterial diffuseColor='black'/>
+                    </Appearance>
+                    <Cone bottom='true' bottomRadius='0.8' 
+                    ccw='true' height='2' lit='true' 
+                    metadata='X3DMetadataObject' side='true' 
+                    solid='true' subdivision='132' top='true' 
+                    topRadius='0.2' useGeoCache='true' ></Cone>
+                  </Shape>
+                </Transform>
+              </Transform>
+            </group>
+          </scene>
+        </x3d>
+      </div>
   </body
 </html>
