@@ -1,3 +1,6 @@
+🗂 [[parent directory]](..)  
+  
+
 📂 CG-Work   
 &emsp;&emsp;📂 [3JS](3JS)  
 &emsp;&emsp;&emsp;&emsp;📂 [js](3JS/js)  
