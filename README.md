@@ -1,1 +1,10 @@
-## CG Work ✏️
+📂 CG-Work   
+&emsp;&emsp;📂 [3JS](3JS)  
+&emsp;&emsp;&emsp;&emsp;📂 [js](js)
+&emsp;&emsp;&emsp;&emsp;📂 [lib](lib)    
+&emsp;&emsp;&emsp;&emsp;📂 [media](media)    
+&emsp;&emsp;&emsp;&emsp;📂 [style](style)    
+&emsp;&emsp;&emsp;&emsp 📄 [index.html](index.html)  
+&emsp;&emsp;📂 [C2D](C2D)  
+&emsp;&emsp;📂 [SVG](SVG)  
+&emsp;&emsp;📂 [X3D](X3D)  
